@@ -6,10 +6,34 @@
             return "Are you sure you want to reload?";
         };
     </script>
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      .embed-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .embed-container embed {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
   </head>
   <body>
-    <div style="text-align: center; position: relative; width: 100%; padding-top: 162.5%;">
-      <embed src="insert.swf" width="526" height="862" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+    <div class="embed-container">
+      <embed src="insert.swf" width="526" height="862">
     </div>
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
   </body>
