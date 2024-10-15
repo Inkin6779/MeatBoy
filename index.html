@@ -6,10 +6,15 @@
             return "Are you sure you want to reload?";
         };
     </script>
-     <style>
+    <style>
+        html, body {
+            height: 100%; /* Ensure the body takes full height */
+            margin: 0; /* Remove default margin */
+            overflow: hidden; /* Prevent scrolling */
+        }
         .embed-container {
             position: relative;
-            height: 100%; /* Full height */
+            height: 100vh; /* Use viewport height */
             padding-top: 163.5%; /* Aspect ratio 526:862 */
             overflow: hidden;
         }
