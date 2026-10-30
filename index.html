@@ -1,16 +1,45 @@
 <html>
   <head>
     <title>Meat Boy</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .scaled-box {
+            height: 100%;
+            max-width: 100%;
+            aspect-ratio: 480 / 640;
+        }
+        .scaled-box embed {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
     <script>
         window.onbeforeunload = function() {
             return "Are you sure you want to reload?";
         };
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.RufflePlayer.config = {
+            letterbox: "on",
+            scale: "showAll",
+            forceScale: true
+        };
     </script>
   </head>
   <body>
-      <div style="text-align: center;">
-      <embed src="insert.swf" width="468.64" height="768">
-      </div>
+    <div class="container">
+        <div class="scaled-box">
+            <embed src="insert.swf" width="100%" height="100%">
+        </div>
     </div>
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
   </body>
